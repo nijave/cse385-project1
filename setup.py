@@ -7,5 +7,4 @@ setup(
 	author_email = 'wilso199@miamioh.edu',
 	packages = ['app',],
 	license = '',
-	long_description = open('README.txt').read(),
 )

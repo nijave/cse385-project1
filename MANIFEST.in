@@ -1,4 +1,4 @@
-include *.txt *.py
+include *.txt *.py *.md
 recursive-include app *.txt *.py
 recursive-include app/templates *.html
 recursive-include app/static *.py *.txt
