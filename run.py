@@ -9,7 +9,6 @@ from flask_cas import login_required
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/index')
 def index():
         user = {'nickname': 'Brandon'}
         posts = [
@@ -33,4 +32,6 @@ cas.init_app(app)
 
 app.config['CAS_SERVER'] = 'https://muidp.miamioh.edu'
 app.config['CAS_AFTER_LOGIN'] = 'route_test'
-app.run(debug = True, host='0.0.0.0')
+
+if __name__ == "__main__":
+	app.run(debug=True, host='0.0.0.0')
