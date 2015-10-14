@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
 	name = 'g-passman',
@@ -7,4 +7,5 @@ setup(
 	author_email = 'wilso199@miamioh.edu',
 	packages = ['app',],
 	license = '',
+	install_requires = ['flask', 'Flask-CAS', 'pyodbc'],
 )
