@@ -1,8 +1,7 @@
 #! venv/bin/python
 import flask
 import flask_cas
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 from flask_cas import CAS
 from flask_cas import login_required
 import os
@@ -28,15 +27,18 @@ def index():
 @app.route('/test/')
 @login_required
 def route_test():
-	#something
-	
+	return render_template('whoami.html', user = cas.username)	
 
 cas = CAS()
 cas.init_app(app)
+file = os.path.dirname(os.path.abspath(__file__)) + '/secret_key'
+sk_f = open(file, 'r')
+secret = sk_f.readline()
+sk_f.close()
 
 app.config['CAS_SERVER'] = 'https://muidp.miamioh.edu'
 app.config['CAS_AFTER_LOGIN'] = 'route_test'
-app.secret_key = os.environ.get('SECRET_KEY', None)
+app.secret_key = secret
 
 if __name__ == "__main__":
 	app.run(debug=True, host='0.0.0.0')
