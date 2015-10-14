@@ -12,7 +12,6 @@ and Bootstrap.
 	* Users can be assigned single passwords
 * Tracks login history
 * Tracks password change history
-* Stores secure notes
 
 ## Database overview
 The database contains the following tables:
@@ -30,4 +29,3 @@ read-only or can make changes
 purposes)
 * **Password-Change-History**: Contains a record of when a password what changed and what the previous value 
 was. This also contains who can change passwords
-* **Secure-Notes**: Contains a title, optional website, and text
