@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-	{% if username is defined and username -%}
-	<h1>Logged in</h1>
-	<p>You are logged in as {{username}}</p>
-	{% else %}
-	<h1>Logged out</h1>
-	{%- endif %}
-{% endblock %}
