@@ -2,7 +2,7 @@
 
 import flask
 import flask_cas
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_cas import CAS
 from flask_cas import login_required
 import os
