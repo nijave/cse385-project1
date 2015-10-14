@@ -1,4 +1,5 @@
-#! venv/bin/python
+#!/usr/bin/python3
+
 import flask
 import flask_cas
 from flask import Flask, render_template, request
