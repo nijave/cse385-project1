@@ -22,13 +22,13 @@ def index():
                 'body': 'The Avengers movie was so cool!'
                 }
         ]
-        return render_template('index.html', title = 'Home', user = user, posts = posts)
+        return render_template('index.html', title = 'Home', user = user, posts = posts, username = cas.username)
 
 
 @app.route('/test/')
 @login_required
 def route_test():
-	return render_template('whoami.html', user = cas.username)	
+	return render_template('whoami.html', username = cas.username)	
 
 cas = CAS()
 cas.init_app(app)
