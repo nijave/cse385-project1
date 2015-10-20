@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-
-#change change change
-
 import flask
 import flask_cas
 from flask import Flask, render_template, request, url_for
