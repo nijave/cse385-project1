@@ -33,17 +33,17 @@ def route_test():
 @app.route('/passwords/')
 @login_required
 def route_passwords():
-	return render_template('passwords.html')
+	return render_template('passwords.html', username = cas.username)
 
 @app.route('/groups/')
 @login_required
 def route_groups():
-	return render_template('groups.html')
+	return render_template('groups.html', username = cas.username)
 
 @app.route('/settings/')
 @login_required
 def route_settings():
-	return render_template('settings.html')
+	return render_template('settings.html', username = cas.username)
 
 cas = CAS()
 cas.init_app(app)
