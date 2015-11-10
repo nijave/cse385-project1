@@ -41,7 +41,7 @@ def route_groups():
 	return render_template('groups.html')
 
 @app.route('/settings')
-@login_requied
+@login_required
 def route_settings():
 	return render_template('settings.html')
 
