@@ -10,7 +10,7 @@ class Database:
 		)
 		self.__cur = self.__conn.cursor()
 		
-	def test():
+	def test(self):
 		self.__cur.execute("SELECT * FROM USERS")
 		return self.__cur.__dict__['_rows']
 '''
