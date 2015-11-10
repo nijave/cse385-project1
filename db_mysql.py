@@ -4,7 +4,7 @@ class Database:
 	# Constructor
 	def __init__(self, host, username, password, db):
 		self.__conn = pymysql.connect(\
-			host=host, user=user, passwd=password, db=db)
+			host=host, user=username, passwd=password, db=db)
 		self.__cur = self.__conn.cursor()
 	
 	# Deconstructor
