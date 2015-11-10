@@ -1,7 +1,7 @@
 import pymysql
 
 class Database:
-	def __init__(self):
+	def __init__(self, app):
 		self.__conn = pymysql.connect(\
 			host=app.config['DB_URL'], \
 			user=app.config['DB_USER'], \
