@@ -6,23 +6,22 @@ from flask import Flask, render_template, request, url_for
 from flask_cas import CAS
 from flask_cas import login_required
 import os
+from initDB import Database
 
 app = Flask(__name__)
 
+# Database configuration information
+app.config['DB_URL'] = '192.168.1.140'
+app.config['DB_USER'] = 'fmscu'
+app.config['DB_PASS'] = ''
+app.config['DB_NAME'] = 'fmscu_passwords'
+			
 @app.route('/')
 def index():
-        user = {'nickname': 'Brandon'}
-        posts = [
-                {
-                'author': {'nickname': 'John'},
-                'body': 'Beautiful day in Portland!'
-                },
-                {
-                'author': {'nickname': 'Susan'},
-                'body': 'The Avengers movie was so cool!'
-                }
-        ]
-        return render_template('index.html', title = 'Home', user = user, posts = posts, username = cas.username)
+	user = {'nickname': 'Brandon'}
+	data = Database.test()
+	
+	return render_template('index.html', title = 'Home', data = data, username = cas.username)
 
 
 @app.route('/test/')
