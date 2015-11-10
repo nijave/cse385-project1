@@ -19,7 +19,8 @@ app.config['DB_NAME'] = 'fmscu_passwords'
 @app.route('/')
 def index():
 	user = {'nickname': 'Brandon'}
-	data = Database.test()
+	db = Database()
+	data = db.test()
 	
 	return render_template('index.html', title = 'Home', data = data, username = cas.username)
 
