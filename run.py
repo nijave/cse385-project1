@@ -30,6 +30,21 @@ def index():
 def route_test():
 	return render_template('whoami.html', username = cas.username)	
 
+@app.route('/passwords')
+@login_required
+def route_passwords():
+	return render_template('passwords.html')
+
+@app.route('/groups')
+@login_required
+def route_groups():
+	return render_template('groups.html')
+
+@app.route('/settings')
+@login_requied
+def route_settings():
+	return render_template('settings.html')
+
 cas = CAS()
 cas.init_app(app)
 file = os.path.dirname(os.path.abspath(__file__)) + '/secret_key'
