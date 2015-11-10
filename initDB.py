@@ -1,18 +1,21 @@
 import pymysql
 
 class Database:
-	def __init__(self, app):
+	# Constructor
+	def __init__(self, host, username, password, db):
 		self.__conn = pymysql.connect(\
-			host=app.config['DB_URL'], \
-			user=app.config['DB_USER'], \
-			passwd=app.config['DB_PASS'], \
-			db=app.config['DB_NAME'] \
-		)
+			host=host, user=user, passwd=password, db=db)
 		self.__cur = self.__conn.cursor()
-		
+	
+	# Deconstructor
+	def __del__(self):
+		self.__cur.close()
+		self.__conn.close()
+	
 	def test(self):
 		self.__cur.execute("SELECT * FROM USERS")
 		return self.__cur.__dict__['_rows']
+		
 '''
 	def connect_db():
 		"""Connects to the specific database."""

@@ -11,16 +11,12 @@ from initDB import Database
 app = Flask(__name__)
 
 # Database configuration information
-app.config['DB_URL'] = '192.168.1.140'
-app.config['DB_USER'] = 'fmscu'
-app.config['DB_PASS'] = ''
-app.config['DB_NAME'] = 'fmscu_passwords'
+app.db = Database('192.168.1.140','fmscu','','fmscu_passwords')
 			
 @app.route('/')
 def index():
 	user = {'nickname': 'Brandon'}
-	db = Database(app)
-	data = db.test()
+	data = app.db.test()
 	
 	return render_template('index.html', title = 'Home', data = data, username = cas.username)
 
