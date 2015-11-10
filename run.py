@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, url_for
 from flask_cas import CAS
 from flask_cas import login_required
 import os
-from initDB import Database
+from db_mysql import Database
 
 app = Flask(__name__)
 
