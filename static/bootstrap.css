@@ -1605,7 +1605,6 @@ pre code {
 }
 .container-fluid {
   padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -4023,10 +4022,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
 }
 .nav > li {
   position: relative;
-  display: block;
+  display: flex;
 }
 .nav > li > a {
   position: relative;
