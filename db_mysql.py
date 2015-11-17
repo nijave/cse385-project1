@@ -22,12 +22,12 @@ class Database:
 			self.__cur = self.__conn.cursor()
 	
 	def test(self):
-		this.__connect()
+		self.__connect()
 		self.__cur.execute("SELECT * FROM USERS")
 		return self.__cur.__dict__['_rows']
 	
 	def getUser(self, id):
-		this.__connect()
+		self.__connect()
 		self.__cur.execute("SELECT UID, ACTIVE FROM USERS WHERE UID=%s", id)
 		user = self.__cur.fetchone()
 		
