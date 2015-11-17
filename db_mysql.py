@@ -3,18 +3,33 @@ import pymysql
 class Database:
 	# Constructor
 	def __init__(self, host, username, password, db):
-		self.__conn = pymysql.connect(\
-			host=host, user=username, passwd=password, db=db)
-		self.__cur = self.__conn.cursor()
-	
+		self.__host = host
+		self.__username = username
+		self.__password = password
+		self.__db = db
+		
+	'''
 	# Deconstructor
 	def __del__(self):
 		self.__cur.close()
 		self.__conn.close()
+	'''
+	
+	def __connect(self):
+		if not self.__conn or not self.__conn.open:
+			self.__conn = pymysql.connect(\
+				host=self.__host, user=self.__username, passwd=self.__password, db=self.__db)
+			self.__cur = self.__conn.cursor()
 	
 	def test(self):
+		this.__connect()
 		self.__cur.execute("SELECT * FROM USERS")
 		return self.__cur.__dict__['_rows']
+	
+	def getUser(self, id):
+		this.__connect()
+		self.__cur.execute("SELECT UID, ACTIVE FROM USERS WHERE UID=%s", id)
+		user = self.__cur.fetchone()
 		
 '''
 	def connect_db():
