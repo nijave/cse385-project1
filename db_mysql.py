@@ -7,6 +7,7 @@ class Database:
 		self.__username = username
 		self.__password = password
 		self.__db = db
+		self.__conn = None
 		
 	'''
 	# Deconstructor
