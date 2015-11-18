@@ -55,5 +55,5 @@ class Database:
 			SELECT GID, NAME, DESCRIPTION \
 			FROM GROUPS G \
 			NATURAL JOIN USER_GROUPS UG \
-			WHERE G.ACTIVE = 1 AND UG.UID = %s, id")
+			WHERE G.ACTIVE = 1 AND UG.UID = %s", id)
 		return self.__cur.fetchall()
