@@ -119,3 +119,74 @@ INSERT INTO PASSWORDS (DESCRIPTION, TITLE, USERNAME, PASSWORD, DATE_ADDED, DATE_
 create view temp as select PID from PASSWORDS ORDER BY USERNAME ASC LIMIT 30,30;
 UPDATE PASSWORDS SET ACTIVE=0 WHERE PID IN (select * from temp);
 drop view temp;	
+
+-- Populate password-groups
+INSERT INTO PASSWORD_GROUPS (PID, GID, DATE_ADDED)
+	VALUES
+	(1, 1, NOW()),
+	(2, 1, NOW()),
+	(3, 1, NOW()),
+	(4, 1, NOW()),
+	(5, 1, NOW()),
+	(6, 1, NOW()),
+	(7, 1, NOW()),
+	(8, 1, NOW()),
+	(9, 1, NOW()),
+	(10, 1, NOW()),
+	(11, 2, NOW()),
+	(12, 2, NOW()),
+	(13, 2, NOW()),
+	(14, 2, NOW()),
+	(15, 2, NOW()),
+	(16, 2, NOW()),
+	(17, 2, NOW()),
+	(18, 2, NOW()),
+	(19, 2, NOW()),
+	(20, 2, NOW())
+	
+-- Populate user-groups
+INSERT INTO USER_GROUPS (UID, GID, DATE_ADDED, ROLE)
+	VALUES
+	('venengnj', 1, NOW(), 'O'),
+	('venengnj', 2, NOW(), 'V'),
+	('venengnj', 3, NOW(), 'E'),
+	('wilso199', 1, NOW(), 'O'),
+	('wilso199', 2, NOW(), 'V'),
+	('wilso199', 3, NOW(), 'E'),
+	('wasungbk', 1, NOW(), 'O'),
+	('wasungbk', 2, NOW(), 'V'),
+	('wasungbk', 3, NOW(), 'E'),
+	('duraisp', 1, NOW(), 'O'),
+	('duraisp', 2, NOW(), 'V'),
+	('duraisp', 3, NOW(), 'E')
+	
+-- Populate user-passwords
+INSERT INTO USER_PASSWORDS (UID, PID, DATE_ADDED)
+	VALUES
+	('venengnj', 21, NOW()),
+	('venengnj', 22, NOW()),
+	('venengnj', 23, NOW()),
+	('wilso199', 21, NOW()),
+	('wilso199', 22, NOW()),
+	('wilso199', 23, NOW()),
+	('wasungbk', 21, NOW()),
+	('wasungbk', 22, NOW()),
+	('wasungbk', 23, NOW()),
+	('duraisp', 21, NOW()),
+	('duraisp', 22, NOW()),
+	('duraisp', 23, NOW())
+	
+-- Populate login-history
+-- TODO
+
+-- Populate password-change-history
+CALL updatePassword('venengnj', 1, 'new-value1');
+CALL updatePassword('venengnj', 1, 'new-value2');
+CALL updatePassword('venengnj', 1, 'new-value3');
+CALL updatePassword('venengnj', 2, 'new-value1');
+CALL updatePassword('venengnj', 2, 'new-value2');
+CALL updatePassword('wilso199', 3, 'new-value1');
+CALL updatePassword('wilso199', 4, 'new-value1');
+CALL updatePassword('wilso199', 5, 'new-value1');
+CALL updatePassword('wilso199', 6, 'new-value1');
+CALL updatePassword('wilso199', 7, 'new-value1');
