@@ -29,7 +29,8 @@ def route_test():
 @app.route('/passwords')
 @login_required
 def route_passwords():
-	return render_template('passwords.html', username = cas.username)
+	password_list = app.db.getPasswords(cas.username)
+	return render_template('passwords.html', username = cas.username, password_list=password_list)
 
 @app.route('/groups')
 @login_required
