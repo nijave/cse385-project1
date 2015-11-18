@@ -143,7 +143,7 @@ INSERT INTO PASSWORD_GROUPS (PID, GID, DATE_ADDED)
 	(17, 2, NOW()),
 	(18, 2, NOW()),
 	(19, 2, NOW()),
-	(20, 2, NOW())
+	(20, 2, NOW());
 	
 -- Populate user-groups
 INSERT INTO USER_GROUPS (UID, GID, DATE_ADDED, ROLE)
@@ -159,7 +159,7 @@ INSERT INTO USER_GROUPS (UID, GID, DATE_ADDED, ROLE)
 	('wasungbk', 3, NOW(), 'E'),
 	('duraisp', 1, NOW(), 'O'),
 	('duraisp', 2, NOW(), 'V'),
-	('duraisp', 3, NOW(), 'E')
+	('duraisp', 3, NOW(), 'E');
 	
 -- Populate user-passwords
 INSERT INTO USER_PASSWORDS (UID, PID, DATE_ADDED)
@@ -175,7 +175,7 @@ INSERT INTO USER_PASSWORDS (UID, PID, DATE_ADDED)
 	('wasungbk', 23, NOW()),
 	('duraisp', 21, NOW()),
 	('duraisp', 22, NOW()),
-	('duraisp', 23, NOW())
+	('duraisp', 23, NOW());
 	
 -- Populate login-history
 -- TODO
