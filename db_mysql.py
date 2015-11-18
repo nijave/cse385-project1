@@ -38,5 +38,5 @@ class Database:
 							FROM PASSWORDS P \
 							NATURAL JOIN USER_GROUPS UG \
 							NATURAL JOIN USER_PASSWORDS UP WHERE P.ACTIVE = 1\
-							AND (UG.UID = %s OR	UP.UID = %s)", id, id)
+							AND (UG.UID = %s OR	UP.UID = %s)", (id, id))
 		return self.__cur.fetchall()
