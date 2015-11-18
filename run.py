@@ -35,7 +35,8 @@ def route_passwords():
 @app.route('/groups')
 @login_required
 def route_groups():
-	return render_template('groups.html', username = cas.username)
+	group_list = app.db.getGroups(cas.username)
+	return render_template('groups.html', username = cas.username, group_list=group_list)
 
 @app.route('/settings')
 @login_required

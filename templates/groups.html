@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-	Groups
+	<h1>Groups</h1>
+	<p>GID, Name, Description</p>
+	{% for g in group_list %}
+		<p>{{ g[0] }}, {{ g[1] }}, {{ g[2] }}</p>
+	{% endfor %}
 {% endblock %}

@@ -48,3 +48,12 @@ class Database:
 			WHERE P.ACTIVE = 1 \
 			AND UID = %s", (id, id))
 		return self.__cur.fetchall()
+		
+	def getGroups(self, id):
+		self.__connect()
+		self.__cur.execute("\
+			SELECT GID, NAME, DESCRIPTION \
+			FROM GROUPS G \
+			NATURAL JOIN USER_GROUPS UG \
+			WHERE G.ACTIVE = 1 AND UG.UID = %s, id")
+		return self.__cur.fetchall()
