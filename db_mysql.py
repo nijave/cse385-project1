@@ -34,9 +34,17 @@ class Database:
 
 	def getPasswords(self, id):
 		self.__connect()
-		self.__cur.execute("SELECT PID, TITLE, DESCRIPTION, USERNAME, PASSWORD \
-							FROM PASSWORDS P \
-							NATURAL JOIN USER_GROUPS UG \
-							NATURAL JOIN USER_PASSWORDS UP WHERE P.ACTIVE = 1\
-							AND (UG.UID = %s OR	UP.UID = %s)", (id, id))
+		self.__cur.execute("\
+			SELECT P.PID, TITLE, DESCRIPTION, USERNAME, PASSWORD \
+			FROM PASSWORDS P \
+			INNER JOIN PASSWORD_GROUPS USING(PID) \
+			INNER JOIN USER_GROUPS UG USING(GID) \
+			WHERE P.ACTIVE = 1 \
+			AND UID = %s \
+			UNION ALL \
+			SELECT P.PID, TITLE, DESCRIPTION, USERNAME, PASSWORD \
+			FROM PASSWORDS P \
+			INNER JOIN USER_PASSWORDS USING(PID) \
+			WHERE P.ACTIVE = 1 \
+			AND UID = %s", (id, id))
 		return self.__cur.fetchall()
