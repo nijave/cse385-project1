@@ -5,6 +5,7 @@
 INSERT INTO USERS VALUES('venengnj', NOW(), 1);
 INSERT INTO USERS VALUES('wilso199', NOW(), 1);
 INSERT INTO USERS VALUES('wasungbk', NOW(), 1);
+INSERT INTO USERS VALUES('duraisp', NOW(), 1);
 
 -- Populate GROUPS
 INSERT INTO GROUPS (NAME, DESCRIPTION, ACTIVE) VALUES('Group 1', 'This is the first group', 1);
