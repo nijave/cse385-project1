@@ -44,8 +44,31 @@ INSERT INTO USER_GROUPS (UID, GID, DATE_ADDED, ROLE)
 	
 -- Add a user to an existing group as owner (O)
 INSERT INTO USER_GROUPS (UID, GID, DATE_ADDED, ROLE) 
-	VALUES('uniqueID', 1, NOW(), 'O');	
+	VALUES('uniqueID', 1, NOW(), 'O');
 	
+-- Assign a password to a specific user
+INSERT INTO USER_PASSWORDS(UID, PID, DATE_ADDED)
+	VALUES('uniqueID', 1, NOW());
+	
+-- Remove a user from a group
+DELETE FROM USER_GROUPS
+WHERE UID='uniqueID'
+AND GID=1;
+
+-- Remove a specific user-password assignment
+DELETE FROM USER_PASSWORDS
+WHERE UID='uniqueID'
+AND PID=1;
+
+-- Deactivate a group
+UPDATE GROUPS SET ACTIVE=0 WHERE GID=1;
+
+-- Deactivate a user
+UPDATE USERS SET ACTIVE=0 WHERE UID='uniqueID';
+
+--Deactivate a password
+UPDATE PASSWORDS SET ACTIVE=0 WHERE PID=1;
+
 -- Add a new password
 CALL insertPassword('uniqueID', 'Title', 'Description', 'username', 'password');
 
