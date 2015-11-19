@@ -20,7 +20,7 @@ AND UID = 'venengnj';
 SELECT GID, NAME, DESCRIPTION
 FROM GROUPS G
 NATURAL JOIN USER_GROUPS UG
-WHERE G.ACTIVE = 1 AND UG.UID = 'uniqueID';
+WHERE G.ACTIVE = 1 AND UG.UID = 'venengnj';
 
 -- Find how many times a password has been changed
 SELECT COUNT(*) as Changes

@@ -17,10 +17,12 @@ class Database:
 	'''
 	
 	def __connect(self):
-		if self.__conn is None or not self.__conn.open:
+		try:
 			self.__conn = pymysql.connect(\
 				host=self.__host, user=self.__username, passwd=self.__password, db=self.__db)
 			self.__cur = self.__conn.cursor()
+		except:
+			print("Something went wrong connecting to mysql")
 	
 	def test(self):
 		self.__connect()
