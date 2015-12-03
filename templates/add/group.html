@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 	<h1>Add Group</h1>
+	<form role="form" method="post" action="/add/group">
+	  <div class="form-group">
+		<label for="email">Name:</label>
+		<input type="text" class="form-control" id="title">
+	  </div>
+	  <div class="form-group">
+		<label for="description">Description:</label>
+		<textarea id="description" class="form-control" rows=3></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
 {% endblock %}
 	
