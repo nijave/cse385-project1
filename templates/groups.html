@@ -10,7 +10,7 @@
 		</tr>
 	{% for g in group_list %}
 	<tr>
-		<td>{{ g[0] }}</td>
+		<td>{{ g[0]|tojson|safe }}</td>
 		<td>{{ g[1] }}</td>
 		<td>{{ g[2] }}</td>
 	</tr>
