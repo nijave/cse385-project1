@@ -6804,5 +6804,9 @@ button.close {
 	margin: 10px auto;
 	width: 80%;
 }
+main > h1 {
+	margin: 10px auto;
+	width: 80%;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */
