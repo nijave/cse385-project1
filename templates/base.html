@@ -16,7 +16,6 @@
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav">
 			<li><a href="/passwords">Passwords</a></li>
 			<li><a href="/groups">Groups</a></li>
@@ -35,14 +34,10 @@
 			<li><a href="/profile">My Profile</a></li>
 		  </ul>
 		  {% if not username %}
-		  <ul class="nav navbar-nav navbar-right">
-			<a type="button" class="btn btn-default navbar-btn" href = "/login">Sign in</a>
+			<a type="button" class="btn btn-default navbar-btn navbar-right" href = "/login">Sign in</a>
 		  {% else %}
-		  <ul class="nav navbar-nav navbar-right">
-			<a type="button" class="btn btn-default navbar-btn" href = "/logout">Sign out</a>
+			<a type="button" class="btn btn-default navbar-btn navbar-right" href = "/logout">Sign out</a>
 		  {% endif %}
-		  </ul>
-		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 	</header>
