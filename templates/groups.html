@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 	<h1>Groups</h1>
-	<p>GID, Name, Description</p>
+	<table style = "width:100%">	
+		<tr>
+			<th>GID </th>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
 	{% for g in group_list %}
-		<p>{{ g[0] }}, {{ g[1] }}, {{ g[2] }}</p>
+	<tr>
+		<td>{{ g[0] }}</td>
+		<td>{{ g[1] }}</td>
+		<td>{{ g[2] }}</td>
+	</tr>
 	{% endfor %}
+	</table> 
 {% endblock %}
+	
