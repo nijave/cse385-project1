@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 	<h1>User Management</h1>
+	<table class="info-table">	
+		<tr>
+			<th>UID</th>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+	{% for user in data %}
+	<tr>
+		<td>{{ user[0] }}</td>
+		<td>{{ user[1] }}</td>
+		<td>{{ user[2] }}</td>
+	</tr>
+	{% endfor %}
+	</table>
 <body>
 </body>
 {% endblock %}

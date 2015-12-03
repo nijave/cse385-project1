@@ -16,15 +16,7 @@ app.db = Database('192.168.1.140','fmscu','','fmscu_passwords')
 @app.route('/')
 def index():
 	user = {'nickname': 'Brandon'}
-	data = app.db.test()
-	
-	return render_template('index.html', title = 'Home', data = data, username = cas.username)
-
-
-@app.route('/test/')
-@login_required
-def route_test():
-	return render_template('whoami.html', username = cas.username)	
+	return render_template('index.html', title = 'Home', username = cas.username)
 
 @app.route('/passwords')
 @login_required
@@ -56,7 +48,8 @@ def route_manage_passwords():
 @app.route('/manage/users')
 @login_required
 def route_manage_users():
-	return render_template('manage/users.html')
+	data = app.db.test()
+	return render_template('manage/users.html', data=data)
 	
 @app.route('/manage/groups')
 @login_required
