@@ -21,13 +21,13 @@ def index():
 @login_required
 def route_passwords():
 	password_list = app.db.getUserPasswords(cas.username)
-	return render_template('passwords.html', username = cas.username, password_list=password_list)
+	return render_template('passwords.html', username = cas.username, title="Passwords", password_list=password_list)
 
 @app.route('/groups')
 @login_required
 def route_groups():
 	group_list = app.db.getUserGroups(cas.username)
-	return render_template('groups.html', username = cas.username, group_list=group_list)
+	return render_template('groups.html', username = cas.username, title="Groups", group_list=group_list)
 
 @app.route('/profile')
 @login_required
@@ -38,7 +38,7 @@ def route_settings():
 @app.route('/manage')
 @login_required
 def route_manage():
-	return render_template('manage.html')
+	return render_template('manage.html', username = cas.username, title="Management Panel")
 	
 #### Start management pages	
 @app.route('/manage/passwords')
