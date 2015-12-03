@@ -56,7 +56,7 @@ def route_manage_users():
 @app.route('/manage/groups')
 @login_required
 def route_manage_groups():
-	group_list = app.db.getUserGroups()
+	group_list = app.db.getUserGroups(cas.username)
 	return render_template('manage/groups.html', title="Manage Groups", data=group_list)
 
 ## Start history pages
