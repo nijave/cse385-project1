@@ -20,13 +20,13 @@ def index():
 @app.route('/passwords')
 @login_required
 def route_passwords():
-	password_list = app.db.getPasswords(cas.username)
+	password_list = app.db.getUserPasswords(cas.username)
 	return render_template('passwords.html', username = cas.username, password_list=password_list)
 
 @app.route('/groups')
 @login_required
 def route_groups():
-	group_list = app.db.getGroups(cas.username)
+	group_list = app.db.getUserGroups(cas.username)
 	return render_template('groups.html', username = cas.username, group_list=group_list)
 
 @app.route('/profile')
