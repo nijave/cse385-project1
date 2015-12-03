@@ -56,7 +56,7 @@ def route_manage_users():
 @login_required
 def route_manage_groups():
 	data = app.db.getGroupList()
-	return render_template('manage/groups.html' title="Manage Groups", data=data)
+	return render_template('manage/groups.html', title="Manage Groups", data=data)
 
 ## Start history pages
 @app.route('/history/passwords')
