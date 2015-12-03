@@ -38,10 +38,10 @@ def route_groups():
 	group_list = app.db.getGroups(cas.username)
 	return render_template('groups.html', username = cas.username, group_list=group_list)
 
-@app.route('/settings')
+@app.route('/profile')
 @login_required
 def route_settings():
-	return render_template('settings.html', username = cas.username)
+	return render_template('profile.html', username = cas.username)
 	
 @app.route('/manage')
 @login_required
@@ -52,6 +52,16 @@ def route_manage():
 @login_required
 def route_manage_passwords():
 	return render_template('manage/passwords.html')
+	
+@app.route('/manage/users')
+@login_required
+def route_manage_users():
+	return render_template('manage/users.html')
+	
+@app.route('/manage/groups')
+@login_required
+def route_manage_groups():
+	return render_template('manage/groups.html')
 
 cas = CAS()
 cas.init_app(app)
