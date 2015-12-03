@@ -1,3 +1,12 @@
+.navbar-default {
+	background: #A30900;
+}
+
+.navbar-nav {
+	color: #fff;
+	font-weight: bold;
+}
+
 body > main {
 	margin: 10px auto;
 	width: 80%;
