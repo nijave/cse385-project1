@@ -1,10 +1,17 @@
 .navbar-default {
 	background: #A30900;
+	display: flex;
+	align-items: flex-end;
 }
 
 .navbar-nav {
 	color: #fff;
 	font-weight: bold;
+	display: flex;
+}
+
+.navbar-right {
+	align-self: flex-end;
 }
 
 .navbar-default .navbar-text {
