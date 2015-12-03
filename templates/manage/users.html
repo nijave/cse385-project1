@@ -7,12 +7,14 @@
 	<p></p>
 	<table class="info-table">	
 		<tr>
+			<th>&nbsp;</th>
 			<th>UID</th>
 			<th>Date Added</th>
 			<th>Active</th>
 		</tr>
 	{% for user in data %}
 	<tr>
+		<td><input type="checkbox" value="{{ user[0] }}"></td>
 		<td>{{ user[0] }}</td>
 		<td>{{ user[1] }}</td>
 		<td>{{ 'True' if user[2] == 1 else 'False' }}</td>
