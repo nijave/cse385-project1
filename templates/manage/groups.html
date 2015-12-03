@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 	<h1>Group Management</h1>
-	<a type="button" class="btn btn-primary" href="/add/group">
-	  <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-weight: bold"></span> Group
-	</a>
-	<p></p>
-	<table class="info-table">	
+	<form method="post" action="/manage/passwords">
+		<a type="button" class="btn btn-primary" href="/add/group">
+		  <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-weight: bold"></span> Group
+		</a>
+		<input type="submit" value="Edit" class="btn btn-primary">
+		<input type="submit" value="Delete" class="btn btn-danger">
+		<p></p>
+		<table class="info-table">	
+			<tr>
+				<th>GID</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Active</th>
+			</tr>
+		{% for group in data %}
 		<tr>
-			<th>GID</th>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Active</th>
+			<td><input type="radio" value="{{ group[0] }}" name="group"></td>
+			<td>{{ group[0] }}</td>
+			<td>{{ group[1] }}</td>
+			<td>{{ group[2] }}</td>
+			<td>{{ 'True' if group[3] == 1 else 'False' }}</td>
 		</tr>
-	{% for group in data %}
-	<tr>
-		<td>{{ group[0] }}</td>
-		<td>{{ group[1] }}</td>
-		<td>{{ group[2] }}</td>
-		<td>{{ 'True' if group[3] == 1 else 'False' }}</td>
-	</tr>
-	{% endfor %}
-	</table>
+		{% endfor %}
+		</table>
+	</form>
 {% endblock %}
 	
