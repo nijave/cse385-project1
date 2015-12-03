@@ -4,5 +4,21 @@
 	<a type="button" class="btn btn-primary btn-lg" href="/add/group">
 	  <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-weight: bold"></span> Group
 	</a>
+	<table class="info-table">	
+		<tr>
+			<th>GID</th>
+			<th>Date Added</th>
+			<th>Description</th>
+			<th>Active</th>
+		</tr>
+	{% for group in data %}
+	<tr>
+		<td>{{ group[0] }}</td>
+		<td>{{ group[1] }}</td>
+		<td>{{ group[2] }}</td>
+		<td>{{ 'True' if group[3] == 1 else 'False' }}</td>
+	</tr>
+	{% endfor %}
+	</table>
 {% endblock %}
 	

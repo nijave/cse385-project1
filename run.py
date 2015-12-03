@@ -15,7 +15,6 @@ app.db = Database('192.168.1.140','fmscu','','fmscu_passwords')
 			
 @app.route('/')
 def index():
-	user = {'nickname': 'Brandon'}
 	return render_template('index.html', title = 'Home', username = cas.username)
 
 @app.route('/passwords')
@@ -50,13 +49,14 @@ def route_manage_passwords():
 @app.route('/manage/users')
 @login_required
 def route_manage_users():
-	data = app.db.test()
-	return render_template('manage/users.html', data=data)
+	data = app.db.getUserList()
+	return render_template('manage/users.html', title="Manage Users", data=data)
 	
 @app.route('/manage/groups')
 @login_required
 def route_manage_groups():
-	return render_template('manage/groups.html')
+	data = app.db.getGroupList()
+	return render_template('manage/groups.html' title="Manage Groups", data=data)
 
 ## Start history pages
 @app.route('/history/passwords')

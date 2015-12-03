@@ -24,9 +24,14 @@ class Database:
 		except:
 			print("Something went wrong connecting to mysql")
 	
-	def test(self):
+	def getUserList(self):
 		self.__connect()
 		self.__cur.execute("SELECT * FROM USERS")
+		return self.__cur.__dict__['_rows']
+	
+	def getGroupList(self):
+		self.__connect()
+		self.__cur.execute("SELECT * FROM GROUPS")
 		return self.__cur.__dict__['_rows']
 	
 	def getUser(self, id):
@@ -34,7 +39,7 @@ class Database:
 		self.__cur.execute("SELECT UID, ACTIVE FROM USERS WHERE UID=%s", id)
 		user = self.__cur.fetchone()
 
-	def getPasswords(self, id):
+	def getUserPasswords(self, id):
 		self.__connect()
 		self.__cur.execute("\
 			SELECT P.PID, TITLE, DESCRIPTION, USERNAME, PASSWORD \
@@ -51,7 +56,7 @@ class Database:
 			AND UID = %s", (id, id))
 		return self.__cur.fetchall()
 		
-	def getGroups(self, id):
+	def getUserGroups(self, id):
 		self.__connect()
 		self.__cur.execute("\
 			SELECT GID, NAME, DESCRIPTION \
