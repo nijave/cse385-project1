@@ -61,35 +61,33 @@ def route_manage_groups():
 ## Start history pages
 @app.route('/history/passwords')
 @login_required
-def route_manage_passwords():
+def route_history_passwords():
 	return render_template('history/passwords.html')
 	
 @app.route('/history/users')
 @login_required
-def route_manage_users():
-	data = app.db.test()
-	return render_template('history/users.html', data=data)
+def route_history_users():
+	return render_template('history/users.html')
 	
 @app.route('/history/groups')
 @login_required
-def route_manage_groups():
+def route_history_groups():
 	return render_template('history/groups.html')
 
 ## Start addition pages
 @app.route('/add/password')
 @login_required
-def route_manage_passwords():
+def route_add_password():
 	return render_template('add/password.html')
 	
 @app.route('/add/user')
 @login_required
-def route_manage_users():
-	data = app.db.test()
-	return render_template('add/user.html', data=data)
+def route_add_user():
+	return render_template('add/user.html')
 	
 @app.route('/add/group')
 @login_required
-def route_manage_groups():
+def route_add_group():
 	return render_template('add/group.html')
 
 cas = CAS()
