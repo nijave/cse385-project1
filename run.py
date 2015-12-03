@@ -64,7 +64,7 @@ secret = sk_f.readline()
 sk_f.close()
 
 app.config['CAS_SERVER'] = 'https://muidp.miamioh.edu'
-app.config['CAS_AFTER_LOGIN'] = 'route_test'
+app.config['CAS_AFTER_LOGIN'] = 'index'
 app.secret_key = secret
 
 if __name__ == "__main__":
