@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>FMSCU Password Manager</title>
+	<title>FMSCU Password Manager | {{ title if title else 'Undefined' }}</title>
 	<link rel="stylesheet" media="screen" href =" {{ url_for('static', filename = 'bootstrap.css') }}">
 	<link rel="stylesheet" media="screen" href =" {{ url_for('static', filename = 'custom.css') }}">
 </head>
