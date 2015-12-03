@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>Management Panel</h1>
+	<h2>Manage</h2>
+	<ul>
+		<li><a href="/manage/passwords">Manage Passwords</a></li>
+		<li><a href="/manage/users">Manage Users</a></li>
+		<li><a href="/manage/groups">Manage Groups</a></li>
+	</ul>
+	<h2>Audit</h2>
+	<ul>
+		<li><a href="/history/passwords">Password History</a></li>
+		<li><a href="/history/users">User History</a></li>
+	</ul>
+{% endblock %}

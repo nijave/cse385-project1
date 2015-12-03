@@ -42,6 +42,16 @@ def route_groups():
 @login_required
 def route_settings():
 	return render_template('settings.html', username = cas.username)
+	
+@app.route('/manage')
+@login_required
+def route_manage():
+	return render_template('manage.html')
+	
+@app.route('/manage/passwords')
+@login_required
+def route_manage_passwords():
+	return render_template('manage/passwords.html')
 
 cas = CAS()
 cas.init_app(app)
