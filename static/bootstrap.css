@@ -6799,4 +6799,10 @@ button.close {
     display: none !important;
   }
 }
+
+.info-table {
+	margin: 10px auto;
+	width: 80%;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
