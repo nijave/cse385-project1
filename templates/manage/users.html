@@ -5,7 +5,8 @@
 		<a type="button" class="btn btn-primary" href="/add/user">
 		  <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-weight: bold"></span> User
 		</a>
-		<input type="submit" name="delete" class="form-control">Delete</input>
+		<input type="submit" name="edit" class="form-control btn btn-primary">Edit</input>
+		<input type="submit" name="delete" class="form-control btn btn-danger">Delete</input>
 		<p></p>
 		<table class="info-table">	
 			<tr>
@@ -16,7 +17,7 @@
 			</tr>
 		{% for user in data %}
 		<tr>
-			<td><input type="checkbox" value="{{ user[0] }}"></td>
+			<td><input type="radio" value="{{ user[0] }}" name="user"></td>
 			<td>{{ user[0] }}</td>
 			<td>{{ user[1] }}</td>
 			<td>{{ 'True' if user[2] == 1 else 'False' }}</td>
