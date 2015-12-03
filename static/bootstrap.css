@@ -6804,6 +6804,12 @@ button.close {
 	margin: 10px auto;
 	width: 80%;
 }
+
+.info-table td, .info-table th {
+	padding: 3px;
+	border: 1px solid black;
+}
+
 main > h1 {
 	margin: 10px auto;
 	width: 80%;
