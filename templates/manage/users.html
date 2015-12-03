@@ -4,14 +4,14 @@
 	<table class="info-table">	
 		<tr>
 			<th>UID</th>
-			<th>Name</th>
-			<th>Description</th>
+			<th>Date Added</th>
+			<th>Active</th>
 		</tr>
 	{% for user in data %}
 	<tr>
 		<td>{{ user[0] }}</td>
 		<td>{{ user[1] }}</td>
-		<td>{{ user[2] }}</td>
+		<td>{{ 'True' if user[2] == 1 else 'False' }}</td>
 	</tr>
 	{% endfor %}
 	</table>
