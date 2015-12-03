@@ -44,19 +44,20 @@ def route_manage():
 @app.route('/manage/passwords')
 @login_required
 def route_manage_passwords():
-	return render_template('manage/passwords.html')
+	password_list = app.db.getUserPasswords(cas.username)
+	return render_template('manage/passwords.html', title="Manage Passwords", data=password_list)
 	
 @app.route('/manage/users')
 @login_required
 def route_manage_users():
-	data = app.db.getUserList()
-	return render_template('manage/users.html', title="Manage Users", data=data)
+	user_list = app.db.getUserList()
+	return render_template('manage/users.html', title="Manage Users", data=user_list)
 	
 @app.route('/manage/groups')
 @login_required
 def route_manage_groups():
-	data = app.db.getGroupList()
-	return render_template('manage/groups.html', title="Manage Groups", data=data)
+	group_list = app.db.getGroupList()
+	return render_template('manage/groups.html', title="Manage Groups", data=group_list)
 
 ## Start history pages
 @app.route('/history/passwords')

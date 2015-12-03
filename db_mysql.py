@@ -34,6 +34,11 @@ class Database:
 		self.__cur.execute("SELECT * FROM GROUPS")
 		return self.__cur.__dict__['_rows']
 	
+	def getPasswordList(self):
+		self.__connect()
+		self.__cur.execute("SELECT * FROM PASSWORDS")
+		return self.__cur.__dict__['_rows']
+	
 	def getUser(self, id):
 		self.__connect()
 		self.__cur.execute("SELECT UID, ACTIVE FROM USERS WHERE UID=%s", id)
